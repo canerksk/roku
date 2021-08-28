@@ -17,7 +17,6 @@ namespace roku
 
         public Form1()
         {
-           
             InitializeComponent();
             GonderenTextBox.Text = Gonderen;
         }
@@ -38,14 +37,12 @@ namespace roku
             string[] lines = System.IO.File.ReadAllLines(filePath);
             if (lines.Length > 0)
             {
-                //first line to create header
                 string firstLine = lines[0];
                 string[] headerLabels = firstLine.Split(',');
                 foreach (string headerWord in headerLabels)
                 {
                     dt.Columns.Add(new DataColumn(headerWord));
                 }
-                //For Data
                 for (int i = 1; i < lines.Length; i++)
                 {
                     string[] dataWords = lines[i].Split(',');
@@ -82,9 +79,7 @@ namespace roku
 
             string Alan = null;
             string Mesaj = GonderilenMesajRichTextBox.Text;
-
-
-
+            
             try
             {
                 for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
@@ -145,7 +140,6 @@ namespace roku
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
         }
-
-
+        
     }
 }
