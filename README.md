@@ -1,5 +1,9 @@
 # Can Değer Çelınç - Visual Studio 2019 & WhatsAppApi (NuGet)
 
+İlgili Çelınç Videosu 
+
+https://www.youtube.com/watch?v=XfUvm3xcf1I
+
 1.Mesaj sekmesinden Gönderen kişi numarasını giriyorsunuz
 2.İçe aktar sekmesinden kişilerin bulunduğu csv dosyasını içeriye aktarıyorsunuz.
 3.Mesajınızı yazıyorsunuz.
