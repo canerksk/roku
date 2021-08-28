@@ -16,12 +16,12 @@ Proje içerisinde bulunan
 ```
 
 Mesaj sekmesi;
-<img src="https://ibb.co/ZK0sWDt" alt="Schlude Sekmesi">
+<a href="https://ibb.co/ZK0sWDt"><img src="https://i.ibb.co/gwx1zKH/mesaj-sekme.png" alt="mesaj-sekme" border="0" /></a>
 
 İçe aktarma sekmesi;
-<img src="https://ibb.co/qyD82wJ" alt="Schlude Sekmesi">
+<a href="https://ibb.co/qyD82wJ"><img src="https://i.ibb.co/znmgtw6/import-sekme.png" alt="import-sekme" border="0" /></a>
 
 Zamanlama sekmesi;
-<img src="https://ibb.co/VLsJ186" alt="Schlude Sekmesi">
+<a href="https://ibb.co/VLsJ186"><img src="https://i.ibb.co/Bf9cpRk/schlude-sekme.png" alt="schlude-sekme" border="0" /></a>
 
 Bulunan yere "WhatsApp Password" ve "WhatsApp Nickname" bilgilerinizi giriyorsunuz.
