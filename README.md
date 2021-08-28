@@ -15,6 +15,8 @@ Proje içerisinde bulunan
  WhatsApp wp = new WhatsApp(Gonderen, "WhatsApp Password", "WhatsApp Nickname", false, false);
 
 ```
+Bulunan yere "WhatsApp Password" ve "WhatsApp Nickname" bilgilerinizi giriyorsunuz.
+
 
 Mesaj sekmesi;
 
@@ -28,4 +30,4 @@ Zamanlama sekmesi;
 
 <a href="https://ibb.co/VLsJ186"><img src="https://i.ibb.co/Bf9cpRk/schlude-sekme.png" alt="schlude-sekme" border="0" /></a>
 
-Bulunan yere "WhatsApp Password" ve "WhatsApp Nickname" bilgilerinizi giriyorsunuz.
+
