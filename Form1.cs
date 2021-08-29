@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WhatsAppApi;
 
@@ -13,11 +7,12 @@ namespace roku
 {
     public partial class Form1 : Form
     {
-        string Gonderen = "";
+        public string Gonderen = "";
 
         public Form1()
         {
             InitializeComponent();
+            dateTimePicker1.Value = DateTime.Now;
             GonderenTextBox.Text = Gonderen;
         }
 
@@ -62,24 +57,21 @@ namespace roku
 
         }
 
-        private void gonder_Click(object sender, EventArgs e)
+        private void Gonder()
         {
-            int AlanCount = dataGridView1.Rows.Count - 1;
 
-            if (AlanCount <= 0)
+            if (dataGridView1.Rows.Count - 1 <= 0)
             {
-
                 DurumListBox.Items.Add("Listeye kişi eklenmemiş.");
             }
             else
             {
-                DurumListBox.Items.Add("Listeye " + AlanCount + " kişi eklenmiş.");
-
+                DurumListBox.Items.Add("Listeye " + (dataGridView1.Rows.Count - 1) + " kişi eklenmiş.");
             }
 
             string Alan = null;
             string Mesaj = GonderilenMesajRichTextBox.Text;
-            
+
             try
             {
                 for (int rows = 0; rows < dataGridView1.Rows.Count; rows++)
@@ -87,8 +79,6 @@ namespace roku
 
                     for (int col = 0; col < dataGridView1.Rows[rows].Cells.Count; col++)
                     {
-
-
                         Alan = dataGridView1.Rows[0].Cells[0].Value.ToString();
                     }
                 }
@@ -97,11 +87,10 @@ namespace roku
 
             catch (Exception ex)
             {
-                MessageBox.Show("try again" + ex);
+                MessageBox.Show("Tekrar deneyin:" + ex);
             }
 
-
-            WhatsApp wp = new WhatsApp(Gonderen, "WhatsApp Password", "WhatsApp Nickname", false, false);
+            WhatsApp wp = new WhatsApp(Gonderen, "Gonderen WhatsApp Password", "Gonderen WhatsApp Name", false, false);
 
             wp.OnConnectSuccess += () =>
             {
@@ -115,7 +104,7 @@ namespace roku
 
                 wp.OnLoginFailed += (data) =>
                 {
-                    DurumListBox.Items.Add("Whatsapp bağlantısı başarısız:" + data);
+                    DurumListBox.Items.Add("Whatsapp girişi başarısız:" + data);
                 };
                 wp.Login();
 
@@ -124,7 +113,13 @@ namespace roku
             {
                 DurumListBox.Items.Add("Whatsapp bağlantısı başarısız:" + ex);
             };
+        }
 
+
+        private void gonder_Click(object sender, EventArgs e)
+        {
+
+            Gonder();
         }
 
         private void GonderilenMesajRichTextBox_click(object sender, EventArgs e)
@@ -140,6 +135,38 @@ namespace roku
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
         }
-        
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            timer1.Enabled = true;
+            //Gonder();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            DateTimeOffset now = (DateTimeOffset)DateTime.UtcNow;
+            DateTimeOffset target = (DateTimeOffset)dateTimePicker1.Value;
+
+            if (now.ToUnixTimeSeconds() == target.ToUnixTimeSeconds())
+            {
+                if (dataGridView1.Rows.Count - 1 <= 0)
+                {
+                    DurumListBox.Items.Add("Listeye kişi eklenmediği için mesajlar belirlenen tarihte gönderilemedi.");
+                }
+                else
+                {
+                    DurumListBox.Items.Add("Zamanalama tarihi geldiği için mesajlar " + (dataGridView1.Rows.Count - 1) + " kişiye gönderildi.");
+                    Gonder();
+                }
+            }
+
+            //DurumListBox.Items.Add("Now:" + now.ToUnixTimeSeconds() + "-" + "Target:" + target.ToUnixTimeSeconds());
+            //DurumListBox.Items.Add(target.ToUnixTimeSeconds());
+
+            //DurumListBox.Items.Add(DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"));
+        }
+
+
     }
 }
