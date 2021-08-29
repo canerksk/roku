@@ -1,4 +1,4 @@
-# Can Değer Çelınç - Visual Studio 2019 & WhatsAppApi (NuGet)
+# Can Değer Çelınç - Visual Studio 2019 .NET Framework 4.6 & WhatsAppApi (NuGet)
 
 İlgili Çelınç YouTube Videosu: https://www.youtube.com/watch?v=XfUvm3xcf1I
 
