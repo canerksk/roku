@@ -1,4 +1,4 @@
-﻿
+
 namespace roku
 {
     partial class Form1
@@ -29,6 +29,7 @@ namespace roku
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.gonder = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@ namespace roku
             this.label1 = new System.Windows.Forms.Label();
             this.GonderenTextBox = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -47,8 +50,7 @@ namespace roku
             this.DurumLabel = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.DurumListBox = new System.Windows.Forms.ListBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -142,6 +144,24 @@ namespace roku
             this.tabPage2.Text = "İçe Aktar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 17);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "CSV Dosyası:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(10, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(104, 17);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "İçe aktarılanlar;";
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(113, 6);
@@ -204,12 +224,13 @@ namespace roku
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm:ss";
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(359, 112);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(204, 22);
             this.dateTimePicker1.TabIndex = 0;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // DurumLabel
             // 
@@ -233,23 +254,10 @@ namespace roku
             this.DurumListBox.Size = new System.Drawing.Size(768, 100);
             this.DurumListBox.TabIndex = 7;
             // 
-            // label4
+            // timer1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 46);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 17);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "İçe aktarılanlar;";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 17);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "CSV Dosyası:";
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -299,6 +307,7 @@ namespace roku
         private System.Windows.Forms.ListBox DurumListBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
