@@ -1,6 +1,6 @@
 # Can Değer Çelınç - Visual Studio 2019 .NET Framework 4.6 & WhatsAppApi (NuGet)
 
-** Bu proje temiz kod satırları ve işlevselliği ön planda tutularak Can Değerin yazılım yarışmasında birinci oluştur. Ödül olarak Amazondan 500 ₺ ödül verilmiştir. *
+** Bu proje Can DEĞER'in yazılım yarışmasında birinci oluştur. Temiz kod satırları ve işlevselliği ön planda tutulmuş, ödül olarak Amazondan 500 ₺ hediye çeki verilmiştir. *
 
 İlgili Çelınç YouTube Videosu: https://www.youtube.com/watch?v=XfUvm3xcf1I
 
